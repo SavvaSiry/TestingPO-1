@@ -4,19 +4,15 @@ import java.util.ArrayList;
 
 public class Place {
 
-    private String name;
-    private ArrayList<Human> humans;
+    private final ArrayList<Human> humans = new ArrayList<>();
 
-    public Place(String name) {
-        this.name = name;
+    public void addHuman(Human human){
+        if (!humans.contains(human) && human.getPlace() != null && human.getPlace().equals(this))
+            humans.add(human);
     }
 
-    public void admit(Human human){
-        humans.add(human);
-    }
-
-    public String getName() {
-        return name;
+    public void removeHuman(Human human){
+        humans.remove(human);
     }
 
     public ArrayList<Human> getHumans() {

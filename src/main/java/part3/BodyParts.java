@@ -1,5 +1,5 @@
 package part3;
 
-public class BodyParts {
+public abstract class BodyParts implements Interact{
 
 }
