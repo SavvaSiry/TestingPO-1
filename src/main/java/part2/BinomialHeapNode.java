@@ -45,28 +45,6 @@ class BinomialHeapNode {
         return y;
     }
 
-    /* Function to find node with key value */
-    public BinomialHeapNode findANodeWithKey(int value) {
-        BinomialHeapNode temp = this, node = null;
-
-        while (temp != null) {
-            if (temp.key == value) {
-                node = temp;
-                break;
-            }
-            if (temp.child == null)
-                temp = temp.sibling;
-            else {
-                node = temp.child.findANodeWithKey(value);
-                if (node == null)
-                    temp = temp.sibling;
-                else
-                    break;
-            }
-        }
-        return node;
-    }
-
     /* Function to get size */
     public int getSize() {
         return (1 + ((child == null) ? 0 : child.getSize()) + ((sibling == null) ? 0 : sibling.getSize()));
